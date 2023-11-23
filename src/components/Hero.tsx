@@ -38,8 +38,8 @@ export function Hero(){
         </div>
 
         <p className="w-full max-w-lg text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit quaerat impedit totam consectetur odit, 
-          iure amet non molestiae ea ut nulla veniam quos odio sunt.
+          Você está preparado para viver dias incríveis, cheios da presença de Deus? Serão três dias para 
+          experimentar o sobrenatural do Senhor, imersos naquilo que Deus tem para as nossas vidas!
         </p>
       </div>
     </div>

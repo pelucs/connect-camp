@@ -46,7 +46,8 @@ export function FormSubscribe(){
       })
       .then(res => {
         if(res.data){
-          prompt("Inscrição enviada! Guarde seu ID", res.data.createSubscribe?.id)
+          prompt("Inscrição enviada! Guarde seu ID", res.data.createSubscribe?.id);
+          window.location.reload();
         }
       })
     }
