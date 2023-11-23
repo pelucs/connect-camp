@@ -49,7 +49,7 @@ export function Pricing(){
         </BoxStyle>
       </div>
 
-      <div className="w-full max-w-md mt-10 py-3 px-4 flex items-center gap-4 border-2
+      <div className="w-full max-w-md mt-10 py-3 px-4 flex items-center justify-between gap-4 border-2
        text-black border-black bg-white">
         <p className="w-full max-w-xs whitespace-nowrap text-ellipsis overflow-x-hidden">
           PIX: (83) 9606-4852 (Guilherme Henrique)
@@ -72,10 +72,43 @@ export function Pricing(){
         </Button>
       </div>
 
-      <p className="mt-10 text-center">
-        Ao efetuar o pagamento é importante que você envie o comprovante para o <br/>
-        número <span className="font-bold text-xl text-yellow-500">(83) 9606-4852</span>
-      </p>
+      <div className="w-full">
+        <div className="w-full md:max-w-xl mt-10 mx-auto relative">
+          <div className="z-20 py-4 px-5 relative text-black bg-white border-2 space-y-5 text-sm">
+            <h1 className="text-2xl text-center font-bold leading-none">
+              Avisos importantes
+            </h1>
+
+            <p className="text-center">
+              - A inscrição só será validada após o pagamento do valor de entrada (<span className="font-bold text-yellow-500">R$80,00</span>);
+            </p>
+
+            <p className="text-center">
+              - Ao efetuar o pagamento é importante que você envie o comprovante para o <br/>
+              número <span className="font-bold text-yellow-500">(83) 9606-4852</span>;
+            </p>
+
+            <p className="text-center">
+              - A última parcela será até <span className="font-bold text-yellow-500">14/03</span>, independente
+              de quando começou a primeira parcela, a última terá que ser nessa data;
+            </p>
+
+            <p className="text-center">
+              - Os participantes que não são membros da igreja deverá preencher uma ficha de recomendação
+              emitida pelo seu pastor e/ou líder;
+            </p>
+
+            <p className="text-center">
+              - Em caso de desistência não haverá reembolso;
+            </p>
+
+            <p className="text-center">
+              - A faixa etária para participar é a partir de 18 anos.
+            </p>
+          </div>
+          <div className="w-full h-full bg-red-500 border-2 border-black absolute top-3 left-3"/>
+        </div>
+      </div>
     </div>
   )
 }
