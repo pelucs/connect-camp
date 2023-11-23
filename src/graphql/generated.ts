@@ -3768,6 +3768,11 @@ export type CreateSubscribeMutationVariables = Exact<{
 
 export type CreateSubscribeMutation = { __typename?: 'Mutation', createSubscribe?: { __typename?: 'Subscribe', id: string } | null };
 
+export type GetSubscribesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSubscribesQuery = { __typename?: 'Query', subscribes: Array<{ __typename?: 'Subscribe', id: string, name: string, email: string, isMember: string, marital: string, birth: string, sex: string, numberPhone: string }> };
+
 
 export const CreateSubscribeDocument = gql`
     mutation CreateSubscribe($name: String!, $email: String!, $birth: String!, $sex: String!, $numberPhone: String!, $marital: String!, $isMember: String!) {
@@ -3810,3 +3815,50 @@ export function useCreateSubscribeMutation(baseOptions?: Apollo.MutationHookOpti
 export type CreateSubscribeMutationHookResult = ReturnType<typeof useCreateSubscribeMutation>;
 export type CreateSubscribeMutationResult = Apollo.MutationResult<CreateSubscribeMutation>;
 export type CreateSubscribeMutationOptions = Apollo.BaseMutationOptions<CreateSubscribeMutation, CreateSubscribeMutationVariables>;
+export const GetSubscribesDocument = gql`
+    query GetSubscribes {
+  subscribes(last: 100, stage: DRAFT) {
+    id
+    name
+    email
+    isMember
+    marital
+    birth
+    sex
+    numberPhone
+    email
+  }
+}
+    `;
+
+/**
+ * __useGetSubscribesQuery__
+ *
+ * To run a query within a React component, call `useGetSubscribesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetSubscribesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetSubscribesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetSubscribesQuery(baseOptions?: Apollo.QueryHookOptions<GetSubscribesQuery, GetSubscribesQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetSubscribesQuery, GetSubscribesQueryVariables>(GetSubscribesDocument, options);
+      }
+export function useGetSubscribesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetSubscribesQuery, GetSubscribesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetSubscribesQuery, GetSubscribesQueryVariables>(GetSubscribesDocument, options);
+        }
+export function useGetSubscribesSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<GetSubscribesQuery, GetSubscribesQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<GetSubscribesQuery, GetSubscribesQueryVariables>(GetSubscribesDocument, options);
+        }
+export type GetSubscribesQueryHookResult = ReturnType<typeof useGetSubscribesQuery>;
+export type GetSubscribesLazyQueryHookResult = ReturnType<typeof useGetSubscribesLazyQuery>;
+export type GetSubscribesSuspenseQueryHookResult = ReturnType<typeof useGetSubscribesSuspenseQuery>;
+export type GetSubscribesQueryResult = Apollo.QueryResult<GetSubscribesQuery, GetSubscribesQueryVariables>;

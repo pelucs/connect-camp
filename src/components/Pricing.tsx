@@ -106,6 +106,7 @@ export function Pricing(){
               - A faixa etária para participar é a partir de 18 anos.
             </p>
           </div>
+          
           <div className="w-full h-full bg-red-500 border-2 border-black absolute top-3 left-3"/>
         </div>
       </div>

@@ -175,8 +175,8 @@ export function FormSubscribe(){
 
           <SelectContent className="bg-white text-black">
             <SelectGroup>
-              <SelectItem value="solteiro(a)" className="py-3 hover:bg-zinc-200 transition-colors">Sim</SelectItem>
-              <SelectItem value="namorando" className="py-3 hover:bg-zinc-200 transition-colors">Não</SelectItem>
+              <SelectItem value="Sim" className="py-3 hover:bg-zinc-200 transition-colors">Sim</SelectItem>
+              <SelectItem value="Não" className="py-3 hover:bg-zinc-200 transition-colors">Não</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>

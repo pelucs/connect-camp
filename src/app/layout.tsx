@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="../../public/favicon.ico"/>
       </Head>
 
-      <body className={`${inter.variable} ${orbitron.variable} font-sans`}>
+      <body className={`${inter.variable} ${orbitron.variable} font-sans  bg-[url(/bg.png)]`}>
         {children}
       </body>
     </html>

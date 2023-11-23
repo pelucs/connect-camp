@@ -35,7 +35,7 @@
     @apply w-2
   }
   *::-webkit-scrollbar-thumb{
-    @apply w-2 bg-secondary
+    @apply w-2 bg-zinc-300
   }
   body {
     @apply bg-background text-foreground;

@@ -32,7 +32,7 @@ export function CountDown(){
           minutesF = minutes <= 9 ? `0${minutes}` : `${minutes}`,
           secondsF = seconds <= 9 ? `0${seconds}` : `${seconds}`;
   
-      setDate(`${dayF.toString()}d ${hoursF.toString()}h ${minutesF.toString()}m ${secondsF.toString()}s`);
+      setDate(`${dayF}d ${hoursF}h ${minutesF}m ${secondsF}s`);
     }
 
   }, []);
@@ -40,7 +40,7 @@ export function CountDown(){
   return(
     <div className="w-full max-w-sm">
       <BoxStyle>
-        <h1 className="px-4 text-2xl md:text-4xl font-bold">{date.toString()}</h1>
+        <h1 className="px-4 text-2xl md:text-4xl font-bold">{date}</h1>
       </BoxStyle>
     </div>
   );

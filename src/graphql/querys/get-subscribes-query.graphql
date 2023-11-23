@@ -1,0 +1,13 @@
+query GetSubscribes{
+  subscribes(last: 100, stage: DRAFT){
+    id,
+    name,
+    email,
+    isMember,
+    marital,
+    birth,
+    sex,
+    numberPhone,
+    email
+  }
+}
