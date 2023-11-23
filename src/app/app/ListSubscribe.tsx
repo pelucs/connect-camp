@@ -20,7 +20,7 @@ export function ListSubscribe(){
   : data.subscribes;
 
   return(
-    <div className="w-full h-full overflow-y-auto">
+    <div className="w-full overflow-y-auto">
       <div className="flex flex-col md:flex-row items-center gap-2">
         <input
           placeholder="Pesquise aqui"
@@ -36,13 +36,13 @@ export function ListSubscribe(){
       <Table className="border border-zinc-300 mt-5">
         <TableHeader className="text-xs">
           <TableRow className="hover:bg-zinc-100 border-zinc-300">
-            <TableHead className="w-full">Nome</TableHead>
-            <TableHead className="w-full whitespace-nowrap">Data de nas.</TableHead>
-            <TableHead className="w-full">Sexo</TableHead>
-            <TableHead className="w-full">Tel.</TableHead>
-            <TableHead className="w-full">Email</TableHead>
-            <TableHead className="w-full whitespace-nowrap">Mem. da ADVEC</TableHead>
-            <TableHead className="w-full">Est. civil</TableHead>
+            <TableHead>Nome</TableHead>
+            <TableHead className="whitespace-nowrap">Data de nas.</TableHead>
+            <TableHead>Sexo</TableHead>
+            <TableHead>Tel.</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead className="whitespace-nowrap">Mem. da ADVEC</TableHead>
+            <TableHead>Est. civil</TableHead>
           </TableRow>
         </TableHeader>
 
