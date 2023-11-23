@@ -1,43 +1,49 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from "react";
-import { BoxStyle } from "./BoxStyle";
+import { useEffect, useState } from 'react';
+import { BoxStyle } from './BoxStyle';
 
-export function CountDown(){
-
-  const [date, setDate] = useState<string>("00d 00h 00m 00s");
+export function CountDown() {
+  const [date, setDate] = useState<string>('00d 00h 00m 00s');
 
   useEffect(() => {
+    const countDownDate = new Date('Mar 28, 2024 23:59:59').getTime(); // Removi os milissegundos extras
 
-    let countDownDate = new Date('Mar 28, 2024 23:59:99').getTime(); //DATA DA CONTAGEM REGRESSIVA
+    const updateCountdown = () => {
+      const currentDate = new Date().getTime();
+      const distance = countDownDate - currentDate;
 
-    setInterval(() => {
+      if (distance <= 0) {
+        // A contagem regressiva terminou
+        formatDate(0, 0, 0, 0);
+        return;
+      }
 
-      let currentDate = new Date().getTime(),
-          distance = countDownDate - currentDate;
-
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       formatDate(days, hours, minutes, seconds);
 
-    }, 1000);
+      // Agende a próxima atualização após 1 segundo
+      setTimeout(updateCountdown, 1000);
+    };
 
-    const formatDate = (days: number, hours: number, minutes: number, seconds: number) => {
-
-      let dayF = days <= 9 ? `0${days}` : `${days}`,
-          hoursF = hours <= 9 ? `0${hours}` : `${hours}`,
-          minutesF = minutes <= 9 ? `0${minutes}` : `${minutes}`,
-          secondsF = seconds <= 9 ? `0${seconds}` : `${seconds}`;
-  
-      setDate(`${dayF}d ${hoursF}h ${minutesF}m ${secondsF}s`);
-    }
-
+    // Inicie a contagem regressiva
+    updateCountdown();
   }, []);
 
-  return(
+  const formatDate = (days: number, hours: number, minutes: number, seconds: number) => {
+    const dayF = days <= 9 ? `0${days}` : `${days}`;
+    const hoursF = hours <= 9 ? `0${hours}` : `${hours}`;
+    const minutesF = minutes <= 9 ? `0${minutes}` : `${minutes}`;
+    const secondsF = seconds <= 9 ? `0${seconds}` : `${seconds}`;
+
+    setDate(`${dayF}d ${hoursF}h ${minutesF}m ${secondsF}s`);
+  };
+
+  return (
     <div className="w-full max-w-sm">
       <BoxStyle>
         <h1 className="px-4 text-2xl md:text-4xl font-bold">{date}</h1>

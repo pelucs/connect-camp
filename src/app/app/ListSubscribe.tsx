@@ -21,7 +21,7 @@ export function ListSubscribe(){
 
   return(
     <div className="w-full h-full overflow-y-auto">
-      <div className="flex flex-col md:flex-row items-center gap-4">
+      <div className="flex flex-col md:flex-row items-center gap-2">
         <input
           placeholder="Pesquise aqui"
           onChange={e => setSearch(e.target.value.toUpperCase())}
@@ -36,13 +36,13 @@ export function ListSubscribe(){
       <Table className="border border-zinc-300 mt-5">
         <TableHeader className="text-xs">
           <TableRow className="hover:bg-zinc-100 border-zinc-300">
-            <TableHead>Nome</TableHead>
-            <TableHead>Data de nas.</TableHead>
-            <TableHead>Sexo</TableHead>
-            <TableHead>Tel.</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Mem. da ADVEC</TableHead>
-            <TableHead>Est. civil</TableHead>
+            <TableHead className="w-full">Nome</TableHead>
+            <TableHead className="w-full whitespace-nowrap">Data de nas.</TableHead>
+            <TableHead className="w-full">Sexo</TableHead>
+            <TableHead className="w-full">Tel.</TableHead>
+            <TableHead className="w-full">Email</TableHead>
+            <TableHead className="w-full whitespace-nowrap">Mem. da ADVEC</TableHead>
+            <TableHead className="w-full">Est. civil</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -50,10 +50,10 @@ export function ListSubscribe(){
             <TableBody className="text-xs">
               {filteringSubscribes.map(subs => (
                 <TableRow key={subs.id} className="hover:bg-zinc-100 border-zinc-300">
-                  <TableCell>{subs.name}</TableCell>
-                  <TableCell>{subs.birth}</TableCell>
+                  <TableCell className="whitespace-nowrap">{subs.name}</TableCell>
+                  <TableCell className="whitespace-nowrap">{subs.birth}</TableCell>
                   <TableCell className="capitalize">{subs.sex}</TableCell>
-                  <TableCell>{subs.numberPhone}</TableCell>
+                  <TableCell className="whitespace-nowrap">{subs.numberPhone}</TableCell>
                   <TableCell>{subs.email}</TableCell>
                   <TableCell>{subs.isMember}</TableCell>
                   <TableCell className="capitalize">{subs.marital}</TableCell>
