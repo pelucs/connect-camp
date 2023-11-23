@@ -3,14 +3,17 @@
 import { ApolloProvider } from "@apollo/client";
 import { ListSubscribe } from "./ListSubscribe";
 import { client } from "@/api/apollo";
+import { useEffect } from "react";
 
 export default () => {
 
-  const keyAcess = localStorage.getItem("clpbmgxk71gtq0bkdd5bbvrj5");
+  useEffect(() => {
+    const keyAcess = localStorage.getItem("clpbmgxk71gtq0bkdd5bbvrj5");
 
-  if(!keyAcess){
-    window.location.href = "/login";
-  }
+    if(!keyAcess){
+      window.location.href = "/login";
+    }
+  })
 
   return(
     <div className="px-5">

@@ -2,15 +2,17 @@
 
 import { Button } from "@/components/ui/button";
 import { Lock, User } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default () => {
 
-  const keyAcess = localStorage.getItem("clpbmgxk71gtq0bkdd5bbvrj5");
+  useEffect(() => {
+    const keyAcess = localStorage.getItem("clpbmgxk71gtq0bkdd5bbvrj5");
 
-  if(keyAcess){
-    window.location.href = "/app";
-  }
+    if(keyAcess){
+      window.location.href = "/app";
+    }
+  })
 
   const [user, setUser] = useState<string>("");
   const [password, setPassword] = useState<string>("");
