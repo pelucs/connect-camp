@@ -52,7 +52,7 @@ export function Pricing(){
       <div className="w-full max-w-md mt-10 py-3 px-4 flex items-center justify-between gap-4 border-2
        text-black border-black bg-white">
         <p className="w-full max-w-xs whitespace-nowrap text-ellipsis overflow-x-hidden">
-          PIX: (83) 9606-4852 (Guilherme Henrique)
+          PIX: guilhermehp17@gmail.com
         </p>
 
         <Button 
@@ -60,7 +60,7 @@ export function Pricing(){
           className="p-0 w-12 h-10"
           onClick={() => {
             setCopy(true);
-            navigator.clipboard.writeText("8396064852");
+            navigator.clipboard.writeText("guilhermehp17@gmail.com");
             setTimeout(() => setCopy(false), 2000)
           }} 
         >
