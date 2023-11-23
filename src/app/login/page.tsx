@@ -25,7 +25,7 @@ export default () => {
   }
 
   return(
-    <div className="w-full h-screen flex items-center justify-center bg-[url(/public/bg.png)] bg-cover bg-center">
+    <div className="w-full h-screen px-5 flex items-center justify-center bg-[url(/public/bg.png)] bg-cover bg-center">
       <div className="w-full md:max-w-xl mt-10 mx-auto relative">
         <div className="z-20 py-4 px-5 relative text-black bg-white border-2 space-y-5 text-sm">
           <h1 className="text-2xl text-center font-bold leading-none">
