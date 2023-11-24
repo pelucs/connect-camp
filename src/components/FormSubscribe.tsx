@@ -1,7 +1,7 @@
 import { User, Calendar, Phone, Mail, Loader } from "lucide-react";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Button } from "./ui/button";
-import { useCreateSubscribeMutation } from "@/graphql/generated";
+import { useCreateSubscribeMutation, useGetSubscribesQuery } from "@/graphql/generated";
 import { useForm } from "react-hook-form";
 
 import z from 'zod'; 
@@ -20,6 +20,7 @@ type CreateSubscribeFormData = z.infer<typeof formSchema>;
 
 export function FormSubscribe(){
 
+  const { data } = useGetSubscribesQuery();
   const [createSubscribe, { loading }] = useCreateSubscribeMutation(); 
   const [isMember, setIsMember] = useState("");
   const [marital, setMarital] = useState("");
@@ -33,23 +34,29 @@ export function FormSubscribe(){
     if(isMember && marital && sex){
       const { name, email, birth, numberPhone } = app;
 
-      await createSubscribe({
-        variables: {
-          name,
-          email,
-          birth,
-          isMember,
-          marital,
-          sex,
-          numberPhone
+      if(data){
+        if(data.subscribes.length < 50){
+          await createSubscribe({
+            variables: {
+              name,
+              email,
+              birth,
+              isMember,
+              marital,
+              sex,
+              numberPhone
+            }
+          })
+          .then(res => {
+            if(res.data){
+              prompt("Inscrição enviada! Guarde seu ID", res.data.createSubscribe?.id);
+              window.location.reload();
+            }
+          })
+        } else{
+          alert("Vagas preenchidas!")
         }
-      })
-      .then(res => {
-        if(res.data){
-          prompt("Inscrição enviada! Guarde seu ID", res.data.createSubscribe?.id);
-          window.location.reload();
-        }
-      })
+      }
     }
   }
 
