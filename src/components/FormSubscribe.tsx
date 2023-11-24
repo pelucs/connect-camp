@@ -3,11 +3,10 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { Button } from "./ui/button";
 import { useCreateSubscribeMutation, useGetSubscribesQuery } from "@/graphql/generated";
 import { useForm } from "react-hook-form";
-
-import z from 'zod'; 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { resolveSoa } from "dns";
+
+import z from 'zod'; 
 
 const formSchema = z.object({
   name: z.string().nonempty("*Campo obrigatório").min(3, { message: "*No mínimo 3 caracteres" }),
@@ -23,6 +22,7 @@ export function FormSubscribe(){
   const { data } = useGetSubscribesQuery();
   const [createSubscribe, { loading }] = useCreateSubscribeMutation(); 
   const [isMember, setIsMember] = useState("");
+  const [methodPayment, setMethodPayment] = useState("");
   const [marital, setMarital] = useState("");
   const [sex, setSex] = useState("");
 
@@ -44,7 +44,8 @@ export function FormSubscribe(){
               isMember,
               marital,
               sex,
-              numberPhone
+              methodPayment,
+              numberPhone,
             }
           })
           .then(res => {
@@ -170,6 +171,24 @@ export function FormSubscribe(){
         {errors.email && (
           <span className="text-xs text-red-500">{errors.email.message}</span>
         )}
+      </div>
+
+      <div className="flex flex-col gap-1">
+        <label htmlFor="" className="text-xs uppercase font-bold">Método de pagamento</label>
+
+        <Select onValueChange={setMethodPayment}>
+          <SelectTrigger className="w-full px-4 h-12 rounded-none">
+            <SelectValue placeholder="Informe o método de pagamento"/>
+          </SelectTrigger>
+
+          <SelectContent className="bg-white text-black">
+            <SelectGroup>
+              <SelectItem value="Pix" className="py-3 hover:bg-zinc-200 transition-colors">Pix</SelectItem>
+              <SelectItem value="Boleto" className="py-3 hover:bg-zinc-200 transition-colors">Boleto em até 4x</SelectItem>
+              <SelectItem value="Cartão de crédito" className="py-3 hover:bg-zinc-200 transition-colors">Cartão de crédito em até 10x</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="flex flex-col gap-1">

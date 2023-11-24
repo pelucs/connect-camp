@@ -2572,6 +2572,7 @@ export type Subscribe = Entity & Node & {
   id: Scalars['ID']['output'];
   isMember: Scalars['String']['output'];
   marital: Scalars['String']['output'];
+  methodPayment: Scalars['String']['output'];
   name: Scalars['String']['output'];
   numberPhone: Scalars['String']['output'];
   /** The time the document was published. Null on documents in draft stage. */
@@ -2655,6 +2656,7 @@ export type SubscribeCreateInput = {
   email: Scalars['String']['input'];
   isMember: Scalars['String']['input'];
   marital: Scalars['String']['input'];
+  methodPayment: Scalars['String']['input'];
   name: Scalars['String']['input'];
   numberPhone: Scalars['String']['input'];
   sex: Scalars['String']['input'];
@@ -2808,6 +2810,25 @@ export type SubscribeManyWhereInput = {
   marital_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   marital_starts_with?: InputMaybe<Scalars['String']['input']>;
+  methodPayment?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  methodPayment_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  methodPayment_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  methodPayment_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  methodPayment_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  methodPayment_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  methodPayment_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  methodPayment_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  methodPayment_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  methodPayment_starts_with?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
   name_contains?: InputMaybe<Scalars['String']['input']>;
@@ -2915,6 +2936,8 @@ export enum SubscribeOrderByInput {
   IsMemberDesc = 'isMember_DESC',
   MaritalAsc = 'marital_ASC',
   MaritalDesc = 'marital_DESC',
+  MethodPaymentAsc = 'methodPayment_ASC',
+  MethodPaymentDesc = 'methodPayment_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
   NumberPhoneAsc = 'numberPhone_ASC',
@@ -2932,6 +2955,7 @@ export type SubscribeUpdateInput = {
   email?: InputMaybe<Scalars['String']['input']>;
   isMember?: InputMaybe<Scalars['String']['input']>;
   marital?: InputMaybe<Scalars['String']['input']>;
+  methodPayment?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   numberPhone?: InputMaybe<Scalars['String']['input']>;
   sex?: InputMaybe<Scalars['String']['input']>;
@@ -2959,6 +2983,7 @@ export type SubscribeUpdateManyInput = {
   email?: InputMaybe<Scalars['String']['input']>;
   isMember?: InputMaybe<Scalars['String']['input']>;
   marital?: InputMaybe<Scalars['String']['input']>;
+  methodPayment?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   numberPhone?: InputMaybe<Scalars['String']['input']>;
   sex?: InputMaybe<Scalars['String']['input']>;
@@ -3137,6 +3162,25 @@ export type SubscribeWhereInput = {
   marital_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   marital_starts_with?: InputMaybe<Scalars['String']['input']>;
+  methodPayment?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  methodPayment_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  methodPayment_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  methodPayment_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  methodPayment_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  methodPayment_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  methodPayment_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  methodPayment_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  methodPayment_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  methodPayment_starts_with?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
   name_contains?: InputMaybe<Scalars['String']['input']>;
@@ -3763,6 +3807,7 @@ export type CreateSubscribeMutationVariables = Exact<{
   numberPhone: Scalars['String']['input'];
   marital: Scalars['String']['input'];
   isMember: Scalars['String']['input'];
+  methodPayment: Scalars['String']['input'];
 }>;
 
 
@@ -3771,13 +3816,13 @@ export type CreateSubscribeMutation = { __typename?: 'Mutation', createSubscribe
 export type GetSubscribesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetSubscribesQuery = { __typename?: 'Query', subscribes: Array<{ __typename?: 'Subscribe', id: string, name: string, email: string, isMember: string, marital: string, birth: string, sex: string, numberPhone: string }> };
+export type GetSubscribesQuery = { __typename?: 'Query', subscribes: Array<{ __typename?: 'Subscribe', id: string, name: string, email: string, isMember: string, marital: string, birth: string, sex: string, numberPhone: string, methodPayment: string }> };
 
 
 export const CreateSubscribeDocument = gql`
-    mutation CreateSubscribe($name: String!, $email: String!, $birth: String!, $sex: String!, $numberPhone: String!, $marital: String!, $isMember: String!) {
+    mutation CreateSubscribe($name: String!, $email: String!, $birth: String!, $sex: String!, $numberPhone: String!, $marital: String!, $isMember: String!, $methodPayment: String!) {
   createSubscribe(
-    data: {name: $name, birth: $birth, sex: $sex, marital: $marital, numberPhone: $numberPhone, isMember: $isMember, email: $email}
+    data: {name: $name, birth: $birth, sex: $sex, marital: $marital, numberPhone: $numberPhone, isMember: $isMember, email: $email, methodPayment: $methodPayment}
   ) {
     id
   }
@@ -3805,6 +3850,7 @@ export type CreateSubscribeMutationFn = Apollo.MutationFunction<CreateSubscribeM
  *      numberPhone: // value for 'numberPhone'
  *      marital: // value for 'marital'
  *      isMember: // value for 'isMember'
+ *      methodPayment: // value for 'methodPayment'
  *   },
  * });
  */
@@ -3826,6 +3872,7 @@ export const GetSubscribesDocument = gql`
     birth
     sex
     numberPhone
+    methodPayment
     email
   }
 }

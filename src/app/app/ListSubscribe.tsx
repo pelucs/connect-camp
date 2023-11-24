@@ -43,6 +43,7 @@ export function ListSubscribe(){
             <TableHead>Email</TableHead>
             <TableHead className="whitespace-nowrap">Mem. da ADVEC</TableHead>
             <TableHead>Est. civil</TableHead>
+            <TableHead className="whitespace-nowrap">Mét. de pag.</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -57,6 +58,7 @@ export function ListSubscribe(){
                   <TableCell>{subs.email}</TableCell>
                   <TableCell>{subs.isMember}</TableCell>
                   <TableCell className="capitalize">{subs.marital}</TableCell>
+                  <TableCell>{subs.methodPayment}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -1,7 +1,7 @@
 mutation CreateSubscribe ($name: String!, $email: String!, $birth: String!, $sex: String!, $numberPhone: String!
-$marital: String!, $isMember: String!,){
+$marital: String!, $isMember: String!, $methodPayment: String!){
   createSubscribe (data: { name: $name, birth: $birth, sex: $sex, marital: $marital, numberPhone: $numberPhone, 
-  isMember: $isMember, email: $email }) {
+  isMember: $isMember, email: $email, methodPayment: $methodPayment }) {
     id
   }
 }
