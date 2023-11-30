@@ -54,7 +54,7 @@ export function PricingRN(){
             </p>
 
             <p className="text-center">
-              - Fazemos a inscrição on-line, entrando em contato com a secretária da juventude <span className="font-bold text-yellow-500">(84) 99732-0225</span>
+              - Fazemos a inscrição on-line, entrando em contato com a secretária da juventude <span className="font-bold text-yellow-500">(84) 99832-0225</span>
             </p>
 
             <p className="text-center">
