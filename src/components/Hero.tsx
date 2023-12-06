@@ -33,12 +33,12 @@ export function Hero(){
           <CountDown/>
 
           <h1 className="mt-5 font-alt font-bold text-center">
-            28 à 30 de Março
+            28 à 31 de Março
           </h1>
         </div>
 
         <p className="w-full max-w-lg text-center">
-          Você está preparado para viver dias incríveis, cheios da presença de Deus? Serão três dias para 
+          Você está preparado para viver dias incríveis, cheios da presença de Deus? Serão quatro dias para 
           experimentar o sobrenatural do Senhor, imersos naquilo que Deus tem para as nossas vidas!
         </p>
       </div>
