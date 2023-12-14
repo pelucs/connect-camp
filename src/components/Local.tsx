@@ -31,7 +31,7 @@ export function Local(){
       <div className="mt-10 flex flex-col items-center gap-10">
         <div className="flex flex-col items-center">
           <h1 className="text-2xl font-bold text-center">
-            Rio das Graças Eco Resort
+            Rio das Garças Eco Resort
           </h1>
 
           <span className="flex items-center gap-1">
