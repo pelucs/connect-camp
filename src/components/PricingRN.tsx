@@ -24,7 +24,7 @@ export function PricingRN(){
             <h1 className="text-4xl font-bold">
               R$380,00
 
-              <span className="ml-2 text-base">em até 3x (sem acréscimo)</span>
+              <span className="ml-2 text-base">em até 3x</span>
             </h1>
           </div>
         </BoxStyle>
