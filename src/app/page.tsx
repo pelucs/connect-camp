@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen px-5 py-20 md:p-20 flex flex-col items-center">
+    <main className="w-full min-h-screen px-5 py-20 md:p-20 flex flex-col items-center bg-[url(/bg.png)]">
       <Hero/>
       <Local/>
       <Pricing/>
